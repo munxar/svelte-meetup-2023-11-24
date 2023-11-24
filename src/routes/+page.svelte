@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	export let data;
+</script>
+
+<h1>My Posts</h1>
+{#each data.posts as post}
+	<div>
+		<a href="/{post.id}">{post.title}</a>
+	</div>
+{/each}
