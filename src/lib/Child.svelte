@@ -1,11 +1,9 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { getContext } from 'svelte';
+	import { makeIp } from './stores';
 	export let id: string;
-	const { say, test } = getContext('Parent');
+	const ip = makeIp();
 </script>
 
-<div>
-	from parent: {$test}
-</div>
-<button on:click={() => say(`hello from child ${id}`)}>say</button>
-<input type="text" bind:value={$test} />
+ip: {$ip}
