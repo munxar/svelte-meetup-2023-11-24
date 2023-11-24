@@ -1,10 +1,14 @@
 <script lang="ts">
-	let name = 'Sascha';
+	import Child from '$lib/Child.svelte';
+	import Container from '$lib/Container.svelte';
+	import Parent from '$lib/Parent.svelte';
+
+	export let data;
 </script>
 
-<h1>Stores</h1>
-one way
-<input type="text" value={name} />
-two way
-<input type="text" bind:value={name} />
-My name is {name}.
+<Parent>
+	<Container>
+		<Child id="one" />
+		<Child id="two" />
+	</Container>
+</Parent>
